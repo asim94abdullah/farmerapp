@@ -44,9 +44,9 @@ export default function SignIn() {
     try {
       setLoader(true);
       let respone = await userLogin(data);
-      console.log('====================================');
-      console.log('new response', respone);
-      console.log('====================================');
+      // console.log('====================================');
+      // console.log('new response', respone);
+      // console.log('====================================');
       if (respone?.status === 'reject') {
         Alert.alert(respone?.res?.result);
       }

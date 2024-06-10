@@ -46,7 +46,8 @@ export default function SingleOrder({route}: {route: any}) {
   const GetSingleOrder = async () => {
     setLoader(true);
     let response = await getSingleOrderData(route.params.orderId);
-    setSingleData(response);
+    console.log('responesssss', response);
+    setSingleData(response.data);
     setLoader(false);
     // console.log('responesssss', response);
   };
@@ -59,7 +60,8 @@ export default function SingleOrder({route}: {route: any}) {
     };
 
     let respone = await updateOrderStatus(orderId, data);
-    Alert.alert(respone.message);
+    console.log('valllue', respone);
+    Alert.alert(respone?.data?.message);
     setLoader(false);
     // console.log('respppppasssim', respone);
   };
